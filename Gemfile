@@ -30,6 +30,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'simple_form'
 gem 'friendly_id'
+gem 'babosa'
 gem 'carrierwave'
 gem "mini_magick"
 

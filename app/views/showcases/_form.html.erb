@@ -6,6 +6,6 @@
   <%= f.input :drawing, as: :file %>
   <%= f.input :category_type, as: :radio_buttons, collection: [['機上型', '1'], ['機下型', '2']] %>
 
-  <%= f.button :submit %>
-  <%= link_to "Cancel", :back, class: "btn btn-default" %>
+  <%= f.button :submit, class: "btn btn-primary" %>
+  <%= link_to "Cancel", :back, class: "btn btn-secondary" %>
 <% end %>
