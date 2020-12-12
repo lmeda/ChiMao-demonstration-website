@@ -1,0 +1,33 @@
+@import "bootstrap";
+@import "pages";
+
+body {
+  font-family: 'Noto Serif TC', serif;
+}
+
+.main {
+  font-size: 2em;
+}
+
+.sub {
+  font-size: 1.5em;
+}
+
+.footer {
+  background-color: #dae0e5;
+  height: 100px;
+  width: 100%;
+  margin-top: 20px;
+
+  .copyright {
+    background-color: darkgray;
+    padding: 1em;
+    text-align: center;
+
+    .copyright-line {
+      color: #1d2124;
+      margin-bottom: 0px;
+      font-size: 0.5em;
+    }
+  }
+}

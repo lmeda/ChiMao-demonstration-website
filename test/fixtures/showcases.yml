@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  model_number: MyString
+  description: MyText
+  image: MyString
+  drawing: MyString
+  category_type: 1
+
+two:
+  title: MyString
+  model_number: MyString
+  description: MyText
+  image: MyString
+  drawing: MyString
+  category_type: 1

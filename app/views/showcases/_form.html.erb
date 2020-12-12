@@ -1,0 +1,11 @@
+<%= simple_form_for @showcase do |f| %>
+  <%= f.input :title %>
+  <%= f.input :model_number %>
+  <%= f.input :description, as: :text %>
+  <%= f.input :image, as: :file %>
+  <%= f.input :drawing, as: :file %>
+  <%= f.input :category_type, as: :radio_buttons, collection: [['機上型', '1'], ['機下型', '2']] %>
+
+  <%= f.button :submit %>
+  <%= link_to "Cancel", :back, class: "btn btn-default" %>
+<% end %>
