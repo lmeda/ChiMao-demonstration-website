@@ -1,5 +1,7 @@
 @import "bootstrap";
 @import "pages";
+@import "dropdown";
+@import "modal.min";
 
 body {
   font-family: 'Noto Serif TC', serif;
@@ -9,8 +11,8 @@ body {
   font-size: 2em;
 }
 
-.sub {
-  font-size: 1.5em;
+.buttons {
+  padding-top: 20px;
 }
 
 .footer {

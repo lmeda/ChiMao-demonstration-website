@@ -1,8 +1,9 @@
 class Showcase < ApplicationRecord
+  belongs_to :category 
   validates_presence_of :title
 
-  mount_uploader :image, ImageUploader
-  mount_uploader :drawing, DrawingUploader
+  mount_uploader :product, ProductUploader
+  mount_uploader :specification, SpecificationUploader
   extend FriendlyId
   friendly_id :title, use: :slugged
 

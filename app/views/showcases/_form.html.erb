@@ -2,10 +2,15 @@
   <%= f.input :title %>
   <%= f.input :model_number %>
   <%= f.input :description, as: :text %>
-  <%= f.input :image, as: :file %>
-  <%= f.input :drawing, as: :file %>
-  <%= f.input :category_type, as: :radio_buttons, collection: [['機上型', '1'], ['機下型', '2']] %>
+  <%= f.input :product, as: :file %>
+  <%= f.input :specification, as: :file %>
+  <%= f.label :category_id, "Category" %>
+	<% Category.all.each do |c| %>
+		<%= f.radio_button :category_id, c.id %> <%= c.name %>
+	<% end %>
 
-  <%= f.button :submit, class: "btn btn-primary" %>
-  <%= link_to "Cancel", :back, class: "btn btn-secondary" %>
+  <div class="buttons">
+    <%= f.button :submit, class: "btn btn-primary" %>
+    <%= link_to "Cancel", :back, class: "btn btn-secondary" %>
+  </div>
 <% end %>

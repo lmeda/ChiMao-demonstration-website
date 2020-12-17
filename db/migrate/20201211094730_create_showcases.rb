@@ -4,9 +4,9 @@ class CreateShowcases < ActiveRecord::Migration[6.0]
       t.string :title
       t.string :model_number
       t.text :description
-      t.string :image
-      t.string :drawing
-      t.integer :category_type
+      t.string :product
+      t.string :specification
+      t.integer :category_id
 
       t.timestamps
     end

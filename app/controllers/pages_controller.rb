@@ -5,5 +5,6 @@ class PagesController < ApplicationController
   end
 
   def about
+    add_breadcrumb('About')
   end
 end

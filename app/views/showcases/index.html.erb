@@ -1,3 +1,15 @@
-<% @showcase.each do |showcase| %>
-  <%= link_to showcase.title, showcase %>
-<% end %>
+<div class="row">
+  <% @showcase.each do |showcase| %>
+    <div class="col-lg-4">
+      <div class="card" style="margin-bottom:20px;">
+        <h5 class="card-header text-center" style="color: cadetblue;">產品型號：<%= showcase.model_number %></h5>
+        <%= image_tag(showcase.product_url(:thumb), class: "card-img-top", style: "width:100%; border-bottom:1px solid rgba(0, 123, 255, 0.25)") if showcase.product_url.present? %>
+        <div class="card-body">
+          <h5 class="card-title"><%= showcase.title %></h5>
+          <p class="card-text" style="color: #6c757d;width:100%;"><%= truncate(showcase.description, length: 50) %></p>
+          <%= link_to "Detail", showcase_path(showcase), class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
