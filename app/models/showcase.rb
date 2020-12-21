@@ -2,6 +2,8 @@ class Showcase < ApplicationRecord
   belongs_to :category 
   validates_presence_of :title
 
+  #scope :category_1, -> { where(category_id: 1) }
+
   mount_uploader :product, ProductUploader
   mount_uploader :specification, SpecificationUploader
   extend FriendlyId

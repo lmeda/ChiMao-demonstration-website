@@ -5,7 +5,7 @@ class ShowcasesController < ApplicationController
 	before_action :add_index_breadcrumb, only: [:show, :new, :edit]
 	
 	def index
-		
+		#@s1 = Showcase.all.where(category_id: 1)
 		if params[:category]
 			@category_id = Category.find_by(name: params[:category]).id
 			@showcase = Showcase.where(category_id: @category_id)

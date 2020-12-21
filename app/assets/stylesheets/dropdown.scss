@@ -2,6 +2,24 @@
   font-size: 1.5em;
 }
 
+#dropdn-menu,
+#sub-dropdn-menu,
+#sub-dropdn-menu2 {
+  background-color: #58baca;
+  a {
+    text-decoration: none;
+  }
+}
+
+#dd {
+  background-color: #58baca;
+  padding-right: 7px;;
+}
+
+#dd:hover {
+  color: #e9ecef;
+}
+
 #dropdn:hover #dropdn-menu {
   display: block;
 }
@@ -32,3 +50,29 @@
   margin-right: .1rem;
 }
 
+.dropdown-menu li #sub-dropdn-menu2 li {
+  border-bottom: 1px solid #e9ecef;
+  padding: 0.25rem 0;
+}
+
+.dropdown-menu li #sub-dropdn-menu2 li:last-child {
+  border-bottom: none;
+}
+
+#bar {
+  padding-right: 20px;
+}
+
+#dropdn-menu {
+  margin-top: -4px;
+}
+
+#sub-dropdn-menu {
+  margin-top: -9px;
+  margin-left: 0px;
+}
+
+#sub-dropdn-menu2 {
+  margin-top: -9px;
+  margin-left: 0px;
+}

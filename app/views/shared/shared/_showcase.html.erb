@@ -1,0 +1,47 @@
+<li class="dropdown-submenu " id="sub-dropdn">
+  <%= link_to showcases_path do %>
+    <span class="dropdown-item" id="dd">Glass Showcases
+      <span class="badge badge-primary badge-pill" style="margin-top: 3px;">2</span>
+      <svg width="0.7em" height="0.7em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="float: right; margin-top: 6px;color: #1e7e34;">
+        <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+      </svg>
+    </span>
+  <% end %>
+  <ul class="dropdown-menu" id="sub-dropdn-menu">
+    <li class="dropdown-submenu" id="sub-dropdn2">
+      <%= link_to showcases_path(category: "機上型"), :method => :get do %>
+          <span class="dropdown-item" id="dd">機上型
+            <span class="badge badge-primary badge-pill" style="margin-top: 3px;"><%= Showcase.where(category_id: 1).count %></span>
+            <svg width="0.7em" height="0.7em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="float: right; margin-top: 6px;color: #1e7e34;">
+          <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+        </svg>
+      </span>
+      <% end %>
+      <ul class="dropdown-menu" id="sub-dropdn-menu2">
+        <% Showcase.all.where(category_id: 1).each do |showcase| %>
+          <li>
+            <%= link_to showcase.title, showcase, class: "dropdown-item", id: "dd" %>
+          </li>
+        <% end %>
+      </ul>
+    </li>
+    <div class="dropdown-divider"></div>
+    <li class="dropdown-submenu" id="sub-dropdn2">
+      <%= link_to showcases_path(category: "機下型"), :method => :get do %>
+        <span class="dropdown-item" id="dd">機下型
+          <span class="badge badge-primary badge-pill" style="margin-top: 3px;"><%= Showcase.where(category_id: 2).count %></span>
+          <svg width="0.7em" height="0.7em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="float: right; margin-top: 6px;color: #1e7e34;">
+            <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+          </svg>
+        </span>
+      <% end %>
+      <ul class="dropdown-menu" id="sub-dropdn-menu2">
+        <% Showcase.all.where(category_id: 2).each do |showcase| %>
+          <li>
+            <%= link_to showcase.title, showcase, class: "dropdown-item", id: "dd" %>
+          </li>
+        <% end %>
+      </ul>
+    </li>
+  </ul>
+</li>
