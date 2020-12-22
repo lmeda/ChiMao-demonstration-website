@@ -2,6 +2,7 @@ class ShowcasesController < ApplicationController
   before_action :set_showcase, only: [:show, :edit, :update, :destroy]
 	before_action :authenticate_administrator!, except: [:index, :show]
 	before_action :is_admin!, except: [:index, :show]
+	before_action :add_home_breadcrumb
 	before_action :add_index_breadcrumb, only: [:show, :new, :edit]
 	
 	def index
@@ -63,7 +64,11 @@ class ShowcasesController < ApplicationController
 		params.require(:showcase).permit(:title, :model_number, :description, :product, :specification, :category_id)
 	end
 
+	def add_home_breadcrumb
+		add_breadcrumb('Product')
+	end
+
 	def add_index_breadcrumb
-		add_breadcrumb('Showcases', showcases_path)
+		add_breadcrumb('Showcases')
 	end
 end

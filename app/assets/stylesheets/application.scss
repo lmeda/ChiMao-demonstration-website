@@ -16,20 +16,33 @@ body {
 }
 
 .footer {
-  background-color: #dae0e5;
   height: 100px;
   width: 100%;
   margin-top: 20px;
 
+  .intro {
+    background-color: #3f4952;
+    color:aliceblue;
+    .series {
+      text-decoration: none;
+      color: #25dede;
+    }
+  }
+
+  .supplier {
+    background-color: #1d2124;
+    color: aliceblue;
+  }
+
   .copyright {
-    background-color: darkgray;
+    background-color: #444242;
     padding: 1em;
     text-align: center;
 
     .copyright-line {
-      color: #1d2124;
+      color: #f8f9fa;
       margin-bottom: 0px;
-      font-size: 0.5em;
+      font-size: 0.8em;
     }
   }
 }

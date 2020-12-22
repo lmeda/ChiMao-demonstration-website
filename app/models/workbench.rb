@@ -1,4 +1,4 @@
-class Showcase < ApplicationRecord
+class Workbench < ApplicationRecord
   belongs_to :category 
   validates_presence_of :title
 
@@ -14,5 +14,4 @@ class Showcase < ApplicationRecord
   def should_generate_new_friendly_id?
     slug.blank? || title_changed?
   end
-
 end

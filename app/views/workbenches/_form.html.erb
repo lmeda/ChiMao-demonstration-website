@@ -1,0 +1,16 @@
+<%= simple_form_for @workbench do |f| %>
+  <%= f.input :title %>
+  <%= f.input :model_number %>
+  <%= f.input :description, as: :text %>
+  <%= f.input :product, as: :file %>
+  <%= f.input :specification, as: :file %>
+  <%= f.label :category_id, "Category" %>
+	<% Category.all.each do |c| %>
+		<%= f.radio_button :category_id, c.id %> <%= c.name %>
+	<% end %>
+
+  <div class="buttons">
+    <%= f.button :submit, class: "btn btn-primary" %>
+    <%= link_to "Cancel", :back, class: "btn btn-secondary" %>
+  </div>
+<% end %>
