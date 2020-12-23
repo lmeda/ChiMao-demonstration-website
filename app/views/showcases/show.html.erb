@@ -23,6 +23,8 @@
   <%= link_to "Delete", showcases_path(@showcase), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
 <% end %>
 
+<%= render 'table' %>
+
 <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -38,7 +40,12 @@
             <h2 class="text-uppercase">Spree Installation</h2>
             <p class="item-intro text-muted">Setup spree for a client with ecommerce requirements</p>
             -->
-            <%= image_tag(@showcase.specification_url(:thumb), style: "width:100%") if @showcase.specification_url.present? %>
+            <% if @showcase.category_id == 2 %>
+              <%= image_tag('/specification/single_door.jpeg', style: "width:100%") %>
+            <% else %>
+              <%= image_tag('/specification/showcase.jpeg', style: "width:100%") %>
+            <% end %>
+            <%#= image_tag(@showcase.specification_url(:thumb), style: "width:100%") if @showcase.specification_url.present? %>
             <!--
             <p>Spree is a rails gem and I know it well!</p>
             <ul class="list-inline">

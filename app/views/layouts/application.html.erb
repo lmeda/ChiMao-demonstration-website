@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Chimao</title>
+    <title>ChiMao</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -15,15 +15,8 @@
     <%= render 'shared/navbar' %>
     <%= render 'shared/carousel' %>
     <div class="container" style="padding: 30px;">
-      <div class="row">
-        <div class="col-lg-3">
-          
-        </div>
-        <div class="col-lg-9">
-          <%= render 'shared/breadcrumbs' %>
-          <%= yield %>
-        </div>
-      </div>  
+      <%= render 'shared/breadcrumbs' %>
+      <%= yield %>
     </div>
     <%= render 'shared/footer' %>
   </body>

@@ -1,0 +1,56 @@
+<h3 style="margin-top: 1em;">
+  <span class="badge badge-info" style="padding:10px">機型規格表</span>
+</h3>
+
+<div class="table-responsive" style="padding-top:0.5em;">
+  <table class="table table-bordered">
+    <thead class="thead-light">
+      <tr>
+        <th class="text-nowrap h">型號</th>
+        <th class="text-nowrap h">品名</th>
+        <th class="text-nowrap h">容量</th>
+        <th class="text-nowrap h">溫度範圍</th>
+        <th class="text-nowrap h">電壓</th>
+        <th class="text-nowrap h">壓縮機</th>
+        <th class="text-nowrap h">附件</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if @showcase.category_id == 1 %>
+        <% Standard.all.where(category_id: 1).each do |standard| %>
+          <tr>
+            <td class="text-nowrap d"><%= standard.model_number %></td>
+            <td class="text-nowrap d"><%= standard.title %></td>
+            <td class="text-nowrap d"><%= standard.capacity %> L</td>
+            <td class="text-nowrap d"><%= standard.temperature %> °C</td>
+            <td class="text-nowrap d"><%= standard.voltage %></td>
+            <td class="text-nowrap d"><%= standard.compressor %> HP</td>
+            <td class="text-nowrap d"><%= standard.annex %></td>
+            <% if current_administrator&.admin %>
+              <td><%= link_to "Edit", edit_standard_path(standard), class: "btn btn-warning" %>
+              <%= link_to "Delete", standards_path(standard), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %></td>
+            <% end %>
+          </tr>
+        <% end %>
+      <% elsif @showcase.category_id == 2 %>
+        <% Standard.all.where(category_id: 2).each do |standard| %>
+          <tr>
+            <td class="text-nowrap d"><%= standard.model_number %></td>
+            <td class="text-nowrap d"><%= standard.title %></td>
+            <td class="text-nowrap d"><%= standard.capacity %> L</td>
+            <td class="text-nowrap d"><%= standard.temperature %> °C</td>
+            <td class="text-nowrap d"><%= standard.voltage %></td>
+            <td class="text-nowrap d"><%= standard.compressor %> HP</td>
+            <td class="text-nowrap d"><%= standard.annex %></td>
+            <% if current_administrator&.admin %>
+              <td><%= link_to "Edit", edit_standard_path(standard), class: "btn btn-warning" %>
+              <%= link_to "Delete", standards_path(standard), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %></td>
+            <% end %>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<p style="color:#8a8279">數字僅供參考，以機體實物為準</p>

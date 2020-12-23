@@ -7,7 +7,7 @@ class CreateShowcases < ActiveRecord::Migration[6.0]
       t.string :product
       t.string :specification
       t.integer :category_id
-
+      
       t.timestamps
     end
   end
