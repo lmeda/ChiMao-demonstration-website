@@ -3,13 +3,15 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 
-.h {
+.table th, .table td {
   vertical-align: middle;
+}
+
+.h {
   text-align: center;
 }
 
 .d {
-  vertical-align: middle;
   text-align: center;
   color: #505a63;
 }

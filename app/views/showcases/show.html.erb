@@ -1,18 +1,18 @@
 <div class="card">
   <div class="card-header bg-transparent">
-    <h3 class="text-center" style="color: #24394e;"><%= @showcase.title %>（<%= (@showcase.category).name %>）</h3>
+    <h3 id="card-header" ><%= @showcase.title %>（<%= (@showcase.category).name %>）</h3>
   </div>
-  <div class="card-body" style="padding-top: 10px;">
+  <div class="card-body" id="card-main">
     <div class="row">
       <div class="col-lg-5">
-        <%= image_tag(@showcase.product_url(:thumb), style: "width:100%;border: 1px solid #dae0e5;") if @showcase.product_url.present? %>
-        <button type="button" class="btn btn-primary" style="margin-top: 10px;text-align: center;" data-toggle="modal" data-target="#portfolioModal1">
+        <%= image_tag(@showcase.product_url(:thumb), id: "card-img") if @showcase.product_url.present? %>
+        <button type="button" class="btn btn-primary" id="card-link" data-toggle="modal" data-target="#portfolioModal">
           Specific
         </button>
       </div>
-      <div class="col-lg-7" style="padding: 20px;">
-        <h5 class="card-title" style="color: cadetblue;">產品型號：<%= @showcase.model_number %></h5>
-        <p class="card-text"><%= simple_format(@showcase.description, style: "color: #6c757d;width:100%;") %></p>
+      <div class="col-lg-7" id="card-space">
+        <h5 class="card-title" id="card-model">產品型號：<%= @showcase.model_number %></h5>
+        <p class="card-text"><%= simple_format(@showcase.description, class: "card-content") %></p>
       </div>
     </div>
   </div>
@@ -20,12 +20,12 @@
 
 <% if current_administrator&.admin %>
   <%= link_to "Edit", edit_showcase_path(@showcase), class: "btn btn-warning" %>
-  <%= link_to "Delete", showcases_path(@showcase), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+  <%= link_to "Delete", @showcase, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
 <% end %>
 
 <%= render 'table' %>
 
-<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="portfolio-modal modal fade" id="portfolioModal" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="close-modal" data-dismiss="modal">
@@ -41,11 +41,11 @@
             <p class="item-intro text-muted">Setup spree for a client with ecommerce requirements</p>
             -->
             <% if @showcase.category_id == 2 %>
-              <%= image_tag('/specification/single_door.jpeg', style: "width:100%") %>
+              <%= image_tag('/specification/single_door.jpeg', class: "modal-width") %>
             <% else %>
-              <%= image_tag('/specification/showcase.jpeg', style: "width:100%") %>
+              <%= image_tag('/specification/showcase.jpeg', class: "modal-width") %>
             <% end %>
-            <%#= image_tag(@showcase.specification_url(:thumb), style: "width:100%") if @showcase.specification_url.present? %>
+            <%#= image_tag(@showcase.specification_url(:thumb), class: "modal-width") if @showcase.specification_url.present? %>
             <!--
             <p>Spree is a rails gem and I know it well!</p>
             <ul class="list-inline">

@@ -2,28 +2,52 @@
 @import "pages";
 @import "standards";
 @import "dropdown";
+@import "products";
+@import "messages";
 @import "modal.min";
 
 body {
   font-family: 'Noto Serif TC', serif;
 }
 
-.main {
-  font-size: 2em;
+.p {
+  padding: 30px;
 }
 
-.buttons {
-  padding-top: 20px;
+#nav {
+  background-color: #e9ecef;
+  .main {
+    font-size: 2em;
+
+    #nav-icon {
+      width: 1.5em;
+      height: 1.5em;
+    }
+  }
+
+  .buttons {
+    padding-top: 20px;
+  }
+}
+
+
+#carousel-image {
+  height: 60vh;
 }
 
 .footer {
-  height: 100px;
+  height: 100%;
   width: 100%;
   margin-top: 20px;
 
   .intro {
     background-color: #3f4952;
     color:aliceblue;
+    .intro-header {
+      padding: 20px;
+      text-align: center;
+      color:#adb5bd;
+    }
     .series {
       text-decoration: none;
       color: #25dede;
@@ -33,6 +57,35 @@ body {
   .supplier {
     background-color: #1d2124;
     color: aliceblue;
+    .supplier-header {
+      text-align: center;
+      text-decoration: underline;
+      text-underline-offset: 1rem;
+      text-decoration-color: #b37222;
+      color: #545b62;
+      padding: 30px;
+    }
+    #column {
+      padding: 20px;
+      #area {
+        padding-bottom: 20px;
+        color:#adb5bd;
+      }
+      .line {
+        background-color: #494e52;
+      }
+    }
+  }
+  #ten {
+    padding-right: 10px;
+  }
+
+  #twelve {
+    padding-right: 12px;
+  }
+
+  #fourteen {
+    padding-right: 14px;
   }
 
   .copyright {
@@ -41,9 +94,9 @@ body {
     text-align: center;
 
     .copyright-line {
-      color: #f8f9fa;
+      color: #b3b9bf;
       margin-bottom: 0px;
-      font-size: 0.8em;
+      font-size: 0.9rem;
     }
   }
 }

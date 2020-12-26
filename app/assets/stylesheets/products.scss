@@ -1,0 +1,71 @@
+#cards-space {
+  margin-bottom: 20px;
+
+  #cards-header {
+    text-align: center;
+    color: cadetblue;
+  }
+
+  #cards-img {
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 123, 255, 0.25);
+  }
+
+  #cards-content {
+    color: #6c757d;
+    width: 100%;
+  }
+}
+
+#card-header {
+  text-align: center;
+  color: #24394e;
+}
+
+#card-main {
+  padding-top: 10px;
+
+  #card-img {
+    width: 100%;
+    border: 1px solid #dae0e5;
+  }
+
+  #card-link {
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  #card-space {
+    padding: 20px;
+
+    #card-model {
+      color: cadetblue;
+    }
+
+    .card-content {
+      color: #6c757d;
+      width: 100%;
+    }
+  }
+}
+
+.list-header {
+  margin-top: 1em;
+
+  #list-title {
+    padding: 10px;
+  }
+}
+
+#model-table {
+  padding-top: 0.5em;
+}
+
+.table-p {
+  color: #8a8279;
+  padding-top: 10px;
+}
+
+.modal-width {
+  width: 100%;
+}

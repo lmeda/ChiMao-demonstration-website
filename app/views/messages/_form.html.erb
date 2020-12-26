@@ -1,0 +1,9 @@
+<%= simple_form_for @message do |f| %>
+  <%= f.input :title %>
+  <%= f.input :content, as: :text %>
+
+  <div class="buttons">
+    <%= f.button :submit, class: "btn btn-primary" %>
+    <%= link_to "Cancel", :back, class: "btn btn-secondary" %>
+  </div>
+<% end %>

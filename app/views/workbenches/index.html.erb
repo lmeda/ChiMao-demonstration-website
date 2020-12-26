@@ -1,12 +1,12 @@
 <div class="row">
   <% @workbench.each do |workbench| %>
     <div class="col-lg-4">
-      <div class="card" style="margin-bottom:20px;">
-        <h5 class="card-header text-center" style="color: cadetblue;">產品型號：<%= workbench.model_number %></h5>
-        <%= image_tag(workbench.product_url(:thumb), class: "card-img-top", style: "width:100%; border-bottom:1px solid rgba(0, 123, 255, 0.25)") if workbench.product_url.present? %>
+      <div class="card" id="cards-space">
+        <h5 class="card-header" id="cards-header">產品型號：<%= workbench.model_number %></h5>
+        <%= image_tag(workbench.product_url(:thumb), class: "card-img-top", id: "cards-img") if workbench.product_url.present? %>
         <div class="card-body">
           <h5 class="card-title"><%= workbench.title %></h5>
-          <p class="card-text" style="color: #6c757d;width:100%;"><%= truncate(workbench.description, length: 50) %></p>
+          <p class="card-text" id="cards-content"><%= truncate(workbench.description, length: 50) %></p>
           <%= link_to "Detail", workbench_path(workbench), class: "btn btn-primary" %>
         </div>
       </div>

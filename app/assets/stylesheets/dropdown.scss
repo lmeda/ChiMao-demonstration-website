@@ -18,7 +18,15 @@
 
 #dd {
   background-color: #e9ecef;
-  padding-right: 7px;;
+  padding-right: 7px;
+  #badge {
+    margin-top: 3px;
+  }
+  #icon {
+    float: right;
+    margin-top: 6px;
+    color: #1e7e34;
+  }
 }
 
 #dd:hover {
@@ -76,4 +84,8 @@
 #sub-dropdn-menu2 {
   margin-top: -9px;
   margin-left: 0px;
+}
+
+#divide {
+  border-color:#b8bcc0;
 }

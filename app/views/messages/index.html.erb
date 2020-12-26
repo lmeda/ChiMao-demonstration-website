@@ -1,0 +1,19 @@
+<h4 class="c"><i class="fas fa-cube" id="t"></i>Latest News</h4>
+<div class="list-group">
+  <% @message.each do |message| %>
+    <div class="list-group-item" id="news">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="news-title"><%= message.title %></h5>
+        <small>
+          <% date = message.created_at %>
+          <%= (date.year-1911).to_s + "年" + (date.month).to_s + "月" + (date.day).to_s + "日" %>
+        </small>
+      </div>
+      <p><%= simple_format(message.content, class: "news-content") %></p>
+      <% if current_administrator&.admin %>
+        <%= link_to "Edit", edit_message_path(message), class: "btn btn-warning" %>
+        <%= link_to "Delete", message, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %></td>
+      <% end %>
+    </div>
+  <% end %>
+</div>

@@ -1,18 +1,18 @@
 <div class="card">
   <div class="card-header bg-transparent">
-    <h3 class="text-center" style="color: #24394e;"><%= @workbench.title %>（<%= (@workbench.category).name %>）</h3>
+    <h3 class="card-heder"><%= @workbench.title %>（<%= (@workbench.category).name %>）</h3>
   </div>
-  <div class="card-body" style="padding-top: 10px;">
+  <div class="card-body" id="card-main">
     <div class="row">
       <div class="col-lg-5">
-        <%= image_tag(@workbench.product_url(:thumb), style: "width:100%;border: 1px solid #dae0e5;") if @workbench.product_url.present? %>
-        <button type="button" class="btn btn-primary" style="margin-top: 10px;text-align: center;" data-toggle="modal" data-target="#portfolioModal1">
+        <%= image_tag(@workbench.product_url(:thumb), id: "card-img") if @workbench.product_url.present? %>
+        <button type="button" class="btn btn-primary" id="card-link" data-toggle="modal" data-target="#portfolioModal1">
           Specific
         </button>
       </div>
-      <div class="col-lg-7" style="padding: 20px;">
-        <h5 class="card-title" style="color: cadetblue;">產品型號：<%= @workbench.model_number %></h5>
-        <p class="card-text"><%= simple_format(@workbench.description, style: "color: #6c757d;width:100%;") %></p>
+      <div class="col-lg-7" id="card-space">
+        <h5 class="card-title" id="card-model">產品型號：<%= @workbench.model_number %></h5>
+        <p class="card-text"><%= simple_format(@workbench.description, class: "card-content") %></p>
       </div>
     </div>
   </div>
@@ -20,7 +20,7 @@
 
 <% if current_administrator&.admin %>
   <%= link_to "Edit", edit_workbench_path(@workbench), class: "btn btn-warning" %>
-  <%= link_to "Delete", workbenches_path(@workbench), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+  <%= link_to "Delete", workbench_path(@workbench), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
 <% end %>
 
 <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
@@ -38,7 +38,7 @@
             <h2 class="text-uppercase">Spree Installation</h2>
             <p class="item-intro text-muted">Setup spree for a client with ecommerce requirements</p>
             -->
-            <%= image_tag(@workbench.specification_url(:thumb), style: "width:100%") if @workbench.specification_url.present? %>
+            <%= image_tag(@workbench.specification_url(:thumb), class: "modal-width") if @workbench.specification_url.present? %>
             <!--
             <p>Spree is a rails gem and I know it well!</p>
             <ul class="list-inline">

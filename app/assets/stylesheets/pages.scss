@@ -9,6 +9,10 @@
 	margin-bottom: 0px;
 }
 
+.c {
+	color: #6c757d;
+}
+
 #t {
 	padding-top: 1em;
 	padding-bottom: 1em;
@@ -17,9 +21,15 @@
 }
 
 .info {
-	border-top: 3px solid #495057;
-    padding-top: 1em;
-    padding-bottom: 0.5em;
-    margin-bottom: 7px;
-    border-bottom: 1px solid #adb5bd;
+	padding: 1em 0em;
+	.info-header {
+		border-top: 3px solid #495057;
+		padding-top: 1em;
+		padding-bottom: 0.5em;
+		margin-bottom: 7px;
+		border-bottom: 1px solid #adb5bd;
+	}
+	#w {
+		width: 30%;
+	}
 }

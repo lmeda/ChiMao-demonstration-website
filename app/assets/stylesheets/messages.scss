@@ -1,3 +1,15 @@
 // Place all the styles related to the news controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+#news {
+  margin-bottom: 20px;
+  border-top-width:1px;
+  .news-title {
+    padding-bottom:10px;
+    color:#598abb;
+  }
+  .news-content {
+    color:#6d7986;
+  }
+}
