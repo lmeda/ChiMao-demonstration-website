@@ -4,6 +4,7 @@
 @import "dropdown";
 @import "products";
 @import "messages";
+@import "contacts";
 @import "modal.min";
 
 body {
@@ -18,13 +19,15 @@ body {
   background-color: #e9ecef;
   .main {
     font-size: 2em;
-
     #nav-icon {
       width: 1.5em;
       height: 1.5em;
     }
   }
-
+  .nav-item {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
   .buttons {
     padding-top: 20px;
   }

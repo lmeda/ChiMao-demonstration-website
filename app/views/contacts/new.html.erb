@@ -1,0 +1,54 @@
+<% flash.each do |key, value| %>
+  <div class="alert alert-<%= key %>">
+    <ul id="alert-ul">
+      <li id="alert-li">
+        <%= value %>
+      </li>
+    </ul>
+  </div>
+<% end %>
+
+<h4 class="c" id="contact-header"><i class="fas fa-cube" id="t"></i>Contact us</h4>
+
+<%= simple_form_for @contact, url: contact_chimao_path do |f| %>
+  <div class="contact-form">
+    <p class="specify"><abbr title="required">*</abbr> 為必填欄位.</p>
+    <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <%= f.input :name, label: "姓名" %>
+      </div>
+      <div class="col-md-4 mb-3">
+        <%= f.input :company, label: "公司名稱" %>
+      </div>
+      <div class="col-md-4 mb-3">
+        <%= f.input :email, as: :email, label: "電子信箱", placeholder: "xxx@example.com" %>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-9 mb-3">
+        <%= f.input :address, label: "地址" %>
+      </div>
+      <div class="col-md-3 mb-3">
+        <%= f.input :zip, label: "郵遞區號" %>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <%= f.input :phone, as: :tel, label: "電話" %>
+      </div>
+      <div class="col-md-4 mb-3">
+        <%= f.input :fax, as: :tel, label: "傳真" %>
+      </div>
+      <div class="col-md-4 mb-3">
+        <%= f.input :title, label: "主題" %>
+      </div>
+    </div>
+      <%= f.input :description, input_html: { class: "content"}, label: "您的留言" %>
+      <%= show_simple_captcha(:object=>"contact", label: "驗證碼（不分大小寫）", placeholder: "") %>
+      <%= recaptcha_tags %>
+    <div class="form-group">
+      <%= f.button :submit, "送出", class: "bt" %>
+      <%= f.button :button, "清除", type: :reset, class: 'btRe' %>
+    </div>
+  </div>
+<% end %>

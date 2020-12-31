@@ -1,3 +1,4 @@
+<h4 class="c"><i class="fas fa-cube" id="t"></i>Showcase</h4>
 <div class="row">
   <% @showcase.each do |showcase| %>
     <div class="col-lg-4">
@@ -7,7 +8,7 @@
         <div class="card-body">
           <h5 class="card-title"><%= showcase.title %></h5>
           <p class="card-text" id="cards-content"><%= truncate(showcase.description, length: 50) %></p>
-          <%= link_to "Detail", showcase_path(showcase), class: "btn btn-primary" %>
+          <%= link_to "Detail", showcase, class: "btn btn-primary" %>
         </div>
       </div>
     </div>

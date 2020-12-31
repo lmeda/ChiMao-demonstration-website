@@ -33,6 +33,8 @@ gem 'friendly_id'
 gem 'babosa'
 gem 'carrierwave'
 gem "mini_magick"
+gem "recaptcha"
+gem 'simple_captcha2', require: 'simple_captcha'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false

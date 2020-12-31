@@ -1,0 +1,78 @@
+// Place all the styles related to the contacts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+#alert-ul {
+  margin-bottom: 0px;
+  padding-left: 0px;
+
+  #alert-li {
+    list-style: none;
+  }
+}
+
+#contact-header {
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-color: tan;
+}
+
+.contact-form {
+  .specify {
+    padding: 0.6em;
+  }
+
+  abbr[title="required"] {
+    color: rgb(175, 26, 26);
+  }
+
+  .content {
+    height: 20vh;
+  }
+  .bt {
+    margin-top: 1rem;
+    font-size: 20px;
+    padding: 8px 30px;
+    background-color: #234254;
+    color: #e9ecef;
+  }
+  .btRe {
+    margin-top: 1rem;
+    font-size: 20px;
+    padding: 8px 30px;
+    background-color: #6c757d;
+    color: #dee2e6;
+  }
+}
+
+#contactJum {
+  background-color: #e2e8ea;
+  padding-top: 40px;
+  padding-bottom: 80px;
+  .contact_title {
+    text-align: center;
+    padding: 48px;
+    padding-top: 0px;
+    text-decoration: underline;
+    text-underline-offset: 1rem;
+    text-decoration-color: #d49791;
+    color: #545b62;
+  }
+  #contact_info {
+    padding-top: 1rem;
+    color: #343a40;
+  }
+  .contact_content {
+    color: #6c757d;
+    font-size: 16px;
+  }
+  .del {
+    background-color: #ec0b0b;
+    color: aliceblue;
+    float: right;
+    padding: .8rem;
+    border-radius: 3px;
+    text-decoration: none;
+    margin-top: 15px;
+  }
+}
