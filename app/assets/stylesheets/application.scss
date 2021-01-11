@@ -1,7 +1,9 @@
 @import "bootstrap";
 @import "pages";
 @import "standards";
-@import "dropdown";
+@import "menubar";
+@import "mobile";
+@import "website";
 @import "products";
 @import "messages";
 @import "contacts";
@@ -14,25 +16,6 @@ body {
 .p {
   padding: 30px;
 }
-
-#nav {
-  background-color: #e9ecef;
-  .main {
-    font-size: 2em;
-    #nav-icon {
-      width: 1.5em;
-      height: 1.5em;
-    }
-  }
-  .nav-item {
-    padding-left: 1em;
-    padding-right: 1em;
-  }
-  .buttons {
-    padding-top: 20px;
-  }
-}
-
 
 #carousel-image {
   height: 60vh;

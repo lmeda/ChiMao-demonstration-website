@@ -1,0 +1,184 @@
+@media (max-width:992px) {
+  
+  .sideBarNav{
+    background-color: #c9d6e2;
+  }
+  
+  #dropdn-menu,
+  #sub-dropdn-menu,
+  #sub-dropdn-menu2 {
+    background-color:#c9d6e2;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  #dd {
+    background-color: #c9d6e2;
+    padding-right: 7px;
+  }
+
+  #dropdn-menu li:hover>a {
+    color: #31363c;
+  }
+
+  
+  .mobileMenu {
+    position: fixed;
+    overflow: scroll;
+    top: 0px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transform: translateX(-100%);
+    transition: all ease 0.25s;
+
+    &.open {
+      transform: translateX(0);
+    }
+
+    #mobileBar {
+      width: 100vw;
+    }
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+
+    &.open {
+      display: block;
+    }
+  }
+
+  .close {
+    width: 20%;
+    margin-left: 80%;
+
+    .closebtn {
+      float: right;
+      margin: 2rem 3rem;
+      font-size: 48px;
+    }
+  }
+
+  /**
+  nav ul li button i.rotate {
+    transform: rotate(-180deg);
+  }
+  **/
+
+  .mobileD {
+    float: right;
+    margin-top: -5.3rem;
+    padding-top: 30px;
+    padding-right: 8px;
+    padding-left: 8px;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .dividerType {
+    display: none;
+  }
+
+  .mobileDrop {
+    float: right;
+    margin-top: -66px;
+    height: 65px;
+    padding-top: 24px;
+    padding-right: 10px;
+    padding-left: 10px;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  #sub-dropdn-menu {
+    padding: 0px;
+  }
+
+  .dropdown-menu li #sub-dropdn-menu2 li {
+    border-bottom: 1px solid #b8bcc0;
+    padding: 0.4rem 0;
+  }
+
+  .dropdown-menu li #sub-dropdn-menu2 li:last-child {
+    border-bottom: none;
+  }
+
+  .mobFa {
+    display: none;
+  }
+
+  .mobileLink {
+    margin: .8em 1em;
+  }
+  .mobileLinkA {
+    margin: .6em 1.5em;
+  }
+
+  .mobileLinkB {
+    margin: .4em 2em;
+  }
+
+  .locA {
+    display: inline-block;
+  }
+
+  .locLink {
+    width: 80%;
+  }
+
+  .poSF {
+    float: right;
+    height: 84px;
+    background: #c9d6e2;
+  }
+
+  .poSS {
+    float: right;
+    height: 65.6px;
+    background: #c9d6e2;
+  }
+
+  .poST {
+    float: right;
+    height: 59.2px;
+    background: #c9d6e2;
+  }
+
+  .subTN {
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  #DropCo {
+    color: #7b8b9a;
+    &:hover {
+      color: #3e5c73;
+    }
+  }
+
+  #caRet {
+    color: #1e7e34;
+  }
+
+  .moDiv {
+    display: none;
+  }
+}

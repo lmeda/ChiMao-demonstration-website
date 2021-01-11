@@ -1,44 +1,56 @@
-<li class="dropdown-submenu " id="sub-dropdn">
-  <%= link_to showcases_path do %>
-    <span class="dropdown-item" id="dd">Glass Showcases
-      <span class="badge badge-primary badge-pill" id="badge">2</span>
-      <svg width="0.7em" height="0.7em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="icon">
-        <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-      </svg>
-    </span>
-  <% end %>
-  <ul class="dropdown-menu" id="sub-dropdn-menu">
+<li class="dropdown-submenu" id="sub-dropdn">
+  <a href="<%= showcases_path %>" class="nav-link mobileLink locA locLink LinkT" id="DropCo">Glass Showcases
+    <span class="badge badge-primary badge-pill mobFa">2</span>
+    <svg width="0.7em" height="0.7em" viewBox="0 0 16 16" class="bi bi-caret-right-fill mobFa" fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="icon">
+      <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+    </svg>
+  </a>
+  <button class="toggle weBtg subTN locA poSS">
+    <h5>
+      <span class="badge badge-info">2</span>
+      <i class="fa fa-caret-down" id="caRet" aria-hidden="true"></i>
+    </h5>
+  </button>
+  <ul class="dropdown-menu wiDu" id="sub-dropdn-menu">
     <li class="dropdown-submenu" id="sub-dropdn2">
-      <%= link_to showcases_path(category: "機上型"), :method => :get do %>
-          <span class="dropdown-item" id="dd">機上型
-            <span class="badge badge-primary badge-pill" id="badge"><%= Showcase.where(category_id: 1).count %></span>
-            <svg width="0.7em" height="0.7em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="icon">
+      <a href="<%= showcases_path(category: "機上型") %>" class="nav-link locA locLink mobileLinkA LinkT" id="DropCo">機上型
+        <span class="badge badge-primary badge-pill mobFa"><%= Showcase.where(category_id: 1).count %></span>
+        <svg width="0.7em" height="0.7em" viewBox="0 0 16 16" class="bi bi-caret-right-fill mobFa" fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="icon">
           <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
         </svg>
-      </span>
-      <% end %>
+      </a>
+      <button class="toggle weBtg subTN locA poST">
+        <h5>
+          <span class="badge badge-info"><%= Showcase.where(category_id: 1).count %></span>
+          <i class="fa fa-caret-down" id="caRet" aria-hidden="true"></i>
+        </h5>
+      </button>
       <ul class="dropdown-menu" id="sub-dropdn-menu2">
         <% Showcase.all.where(category_id: 1).each do |showcase| %>
           <li>
-            <%= link_to showcase.title, showcase, class: "dropdown-item", id: "dd" %>
+            <%= link_to showcase.title, showcase, class: "nav-link mobileLinkB LinkT", id: "DropCo" %>
           </li>
         <% end %>
       </ul>
     </li>
-    <div class="dropdown-divider" id="divide"></div>
+    <div class="dropdown-divider moDiv" id="divide"></div>
     <li class="dropdown-submenu" id="sub-dropdn2">
-      <%= link_to showcases_path(category: "機下型"), :method => :get do %>
-        <span class="dropdown-item" id="dd">機下型
-          <span class="badge badge-primary badge-pill" id="badge"><%= Showcase.where(category_id: 2).count %></span>
-          <svg width="0.7em" height="0.7em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="icon">
-            <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-          </svg>
-        </span>
-      <% end %>
+      <a href="<%= showcases_path(category: "機下型") %>" class="nav-link locA locLink mobileLinkA LinkT" id="DropCo">機下型
+        <span class="badge badge-primary badge-pill mobFa"><%= Showcase.where(category_id: 2).count %></span>
+        <svg width="0.7em" height="0.7em" viewBox="0 0 16 16" class="bi bi-caret-right-fill mobFa" fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="icon">
+          <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+        </svg>
+      </a>
+      <button class="toggle weBtg subTN locA poST">
+        <h5>
+          <span class="badge badge-info"><%= Showcase.where(category_id: 2).count %></span>
+          <i class="fa fa-caret-down" id="caRet" aria-hidden="true"></i>
+        </h5>
+      </button>
       <ul class="dropdown-menu" id="sub-dropdn-menu2">
         <% Showcase.all.where(category_id: 2).each do |showcase| %>
           <li>
-            <%= link_to showcase.title, showcase, class: "dropdown-item", id: "dd" %>
+            <%= link_to showcase.title, showcase, class: "nav-link mobileLinkB LinkT", id: "DropCo" %>
           </li>
         <% end %>
       </ul>
