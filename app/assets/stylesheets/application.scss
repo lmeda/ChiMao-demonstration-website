@@ -1,9 +1,8 @@
 @import "bootstrap";
 @import "pages";
 @import "standards";
-@import "menubar";
-@import "mobile";
-@import "website";
+@import "navbar";
+@import "sidebar";
 @import "products";
 @import "messages";
 @import "contacts";
@@ -17,12 +16,70 @@ body {
   padding: 30px;
 }
 
+.navbar {
+  @media (max-width: 992px) {
+    display: none;
+  }
+}
+
+#sidebar {
+  @media (min-width: 992px) {
+    display: none;
+  }
+}
+
+.topName {
+  margin-left:56px;
+  margin-top:40px;
+  margin-bottom: 0px;
+  padding-bottom: 10px;
+  font-family: 'Noto Serif TC';
+  font-style: italic;
+  font-size: 45px;
+  width: 200px;
+  border-bottom: 3px solid #acc9d4;
+  color: #0062cc;
+  @media (min-width: 992px) {
+    display: none;
+  }
+}
+
+#sf-menu li {
+  background: #BDD2FF;
+  -webkit-transition: background .2s;
+  transition: background .2s;
+}
+
+#sf-menu li:hover,
+#sf-menu li.sfHover {
+  background: #CFDEFF;
+  /* only transition out, not in */
+  -webkit-transition: none;
+  transition: none;
+}
+
+#sf-menu li a {
+  -webkit-transition: color .2s;
+  transition: color .2s;
+}
+
+#sf-menu li:hover > a,
+#sf-menu li.sfHover > a {
+  color: #f8f9fa;
+  /* only transition out, not in */
+  -webkit-transition: none;
+  transition: none;
+}
+
 #carousel-image {
   height: 60vh;
+  @media (max-width: 992px) {
+    height: 40vh;
+  }
 }
 
 .footer {
-  height: 100%;
+  //height: 100%;
   width: 100%;
   margin-top: 20px;
 

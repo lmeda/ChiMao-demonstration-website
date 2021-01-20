@@ -1,17 +1,9 @@
 <li class="nav-item dropdown" id="dropdn">
-  <a class="nav-link dropfont locA locLink" id="DropCo" href="#">
+  <a class="nav-link" id="dropfont" data-toggle="dropdown" href="#">
     Products
   </a>
-  <button class="weBD subTN locA poSF" id="navbarDropdown" data-toggle="dropdown">
-    <h5><span class="badge badge-info" id="badge">2</span>
-      <i class="fa fa-caret-down" id="caRet" aria-hidden="true"></i>
-    </h5>
-  </button>
-  <ul class="dropdown-menu wiDu" id="dropdn-menu" aria-labelledby="navbarDropdown">
-    <%= render 'shared/shared/showcase' %>
-    <div class="dropdown-divider moDiv" id="divide"></div>
-    <%= render 'shared/shared/workbench' %>
-    <div class="dropdown-divider moDiv" id="divide"></div>
-    <a class="dropdown-item" href="#">Something else here</a>
+  <ul class="dropdown-menu" id="dropdn-menu" aria-labelledby="navbarDropdown">
+    <%= render 'shared/navbar/showcase' %>
+    <%= render 'shared/navbar/workbench' %>
   </ul>
 </li>

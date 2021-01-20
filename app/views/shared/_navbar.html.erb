@@ -1,93 +1,61 @@
-<nav class="navbar sticky-top navbar-expand-lg navbar-light justify-content-sm-start fixed-top" id="nav">
+<nav class="navbar sticky-top navbar-expand-lg navbar-light fixed-top" id="nav">
   <div class="container-fluid">
-    <a class="navbar-brand main order-1 order-lg-0 ml-lg-0 mr-2 ml-auto" href="<%= root_path %>">
+    <a class="navbar-brand main" href="<%= root_path %>">
       <%= image_tag('/Datetime.png', class: "d-inline-block align-top", id: "nav-icon") %>
       ChiMao
-    </a>    
-    <a class="navbar-toggler align-self-start" id="navTog" type="button">
-      <span class="navbar-toggler-icon"></span>
     </a>
 
-    <div class="collapse navbar-collapse d-flex flex-column flex-lg-row flex-xl-row mobileMenu sideBarNav" id="navbarContent">
-      <ul class="navbar-nav nav-items align-self-stretch mx-auto" id="mobileBar">
-        <a href="" class="close">
-          <i class="fa fa-times closebtn" id="close" aria-hidden="true"></i>
-        </a>
-        <li class="nav-item nav-expand">
-          <%= link_to "Home", root_path, class: "nav-link nav-expand-link dropfont", id: "DropCo" %>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav mx-auto" id="sf-menu">
+        <li class="nav-item">
+          <%= link_to "Home", root_path, class: "nav-link #{current? "current", root_path}", id: "dropfont" %>
         </li>
-        <li class="nav-item nav-expand">
-          <%= link_to "About us", about_path, class: "nav-link nav-expand-link dropfont", id: "DropCo" %>
+        <li class="nav-item">
+          <%= link_to "About us", about_path, class: "nav-link #{current? "current", about_path}", id: "dropfont" %>
         </li>
         <%= render 'shared/dropdown' %>
-        <li class="nav-item nav-expand">
-          <%= link_to "News", news_path, class: "nav-link nav-expand-link dropfont", id: "DropCo" %>
+        <li class="nav-item">
+          <%= link_to "News", news_path, class: "nav-link #{current? "current", news_path}", id: "dropfont" %>
         </li>
-        <li class="nav-item nav-expand">
+        <li class="nav-item">
           <% if current_administrator&.admin %>
-            <%= link_to "Feedback", feedback_path, class: "nav-link nav-expand-link dropfont", id: "DropCo" %>
+            <%= link_to "Feedback", feedback_path, class: "nav-link #{current? "current", feedback_path}", id: "dropfont" %>
           <% else %>
-            <%= link_to "Contact us", contact_chimao_path, class: "nav-link nav-expand-link dropfont", id: "DropCo" %>
+            <%= link_to "Contact us", contact_chimao_path, class: "nav-link #{current? "current", contact_chimao_path}", id: "dropfont" %>
           <% end %>
         </li>
-        <li class="nav-item nav-expand">
-          <% if current_administrator %>
-            <%= link_to "Log out", destroy_administrator_session_path, :method => :delete, class: "nav-link nav-expand-link dropfont", id: "DropCo" %>
-          <% end %>
-        </li>
+        <% if current_administrator %>
+          <li class="nav-item">
+              <%= link_to "Log out", destroy_administrator_session_path, :method => :delete, class: "nav-link", id: "dropfont" %>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>
 </nav>
-<div class="overlay"></div>
 
 <script>
   $(document).ready(function() {
-    var fixHeight = function() {
-      $(".navbar-nav").css(
-        "max-height",
-        document.documentElement.clientHeight - 150
-      );
-    };
-
-    fixHeight();
-
-    $(window).resize(function() {
-      fixHeight();
+    // initialise plugin
+    var example = $('#sf-menu').superfish({
+      //add options here if required
     });
 
-    $(".navbar .navbar-toggler").on("click", function() {
-      fixHeight();
+    // buttons to demonstrate Superfish's public methods
+    $('.destroy').on('click', function(){
+      example.superfish('destroy');
     });
-    
-    $(".navbar-toggler, .overlay").on("click", function() {
-      $(".mobileMenu, .overlay").toggleClass("open");
+
+    $('.init').on('click', function(){
+      example.superfish();
     });
-    
-    /**
-    $('.weBD').click(function() {
-      $('nav ul .first').toggleClass("rotate");
-    })
-    **/
 
-    $( '.dropdown-menu button.toggle' ).on( 'click', function ( e ) {
-        var $el = $( this );
-        $el.toggleClass('active-dropdown');
-        var $parent = $( this ).offsetParent( ".dropdown-menu" );
-        if ( !$( this ).next().hasClass( 'show' ) ) {
-            $( this ).parents( '.dropdown-menu' ).first().find( '.show' ).removeClass( "show" );
-        }
-        var $subMenu = $( this ).next( ".dropdown-menu" );
-        $subMenu.toggleClass( 'show' );
-        
-        $( this ).parent( "li" ).toggleClass( 'show' );
+    $('.open').on('click', function(){
+      example.children('li:first').superfish('show');
+    });
 
-        $( this ).parents( 'li.nav-item.dropdown.show' ).on( 'hidden.bs.dropdown', function ( e ) {
-            $( '.dropdown-menu .show' ).removeClass( "show" );
-            $el.removeClass('active-dropdown');
-        } );
-
-        return false;
-    } );
+    $('.close').on('click', function(){
+      example.children('li:first').superfish('hide');
+    });
   });
 </script>

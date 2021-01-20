@@ -1,0 +1,82 @@
+<nav id="sidebar">
+  <div class="custom-menu">
+    <button type="button" id="sidebarCollapse" class="btn btn-primary">
+      <i class="fa fa-bars"></i>
+      <span class="sr-only">Toggle Menu</span>
+    </button>
+  </div>
+  <div class="pd">
+    <h1><a href="<%= root_path %>" class="logo"><%= image_tag('/Datetime.png', class: "d-inline-block align-top", id: "logo") %>ChiMao</a></h1>
+    <ul class="list-unstyled components mb-5">
+      <li class="<%= is_active?('/') %>">
+        <a href="<%= root_path %>"><span class="fa fa-home mr-3"></span> Home</a>
+      </li>
+      <li class="<%= is_active?('/about') %>">
+          <a href="<%= about_path %>"><span class="fa fa-user mr-3"></span> About us</a>
+      </li>
+      <li class="<%= is_active?('/showcases') %>">
+        <a href="#">
+          <span class="fab fa-elementor mr-3"></span> Product
+        </a>
+        <i class="fas fa-angle-down Pro" data-toggle="collapse" href="#one" id="faDown"></i>
+        <div class="collapse" id="one">
+          <div>
+            <ul class="list-unstyled" id="p40">
+              <%= render 'shared/sidebar/showcase' %>
+              <%= render 'shared/sidebar/workbench' %>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li class="<%= is_active?('/news') %>">
+        <a href="<%= news_path %>"><span class="fa fa-sticky-note mr-3"></span> News</a>
+      </li>
+      <li class="<%= is_active?('/contact_chimao') %>">
+        <% if current_administrator&.admin %>
+          <a href="<%= feedback_path %>"><span class="fa fa-paper-plane mr-3"></span> Feedback</a>
+        <% else %>
+          <a href="<%= contact_chimao_path %>"><span class="fa fa-paper-plane mr-3"></span> Contact us</a>
+        <% end %>
+      </li>
+      <% if current_administrator %>
+        <li>
+          <a href="<%= destroy_administrator_session_path %>" data-method="delete"><span class="fas fa-sign-out-alt mr-3"></span> Log out</a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</nav>
+
+<script>
+  (function($) {
+
+    var fullHeight = function() {
+
+      $('.js-fullheight').css('height', $(window).height());
+      $(window).resize(function(){
+        $('.js-fullheight').css('height', $(window).height());
+      });
+
+    };
+    fullHeight();
+
+    $('#sidebarCollapse').on('click', function () {
+        $('#sidebar').toggleClass('active');
+        $('.topName').toggle('');
+    });
+
+    var offset = $("#sidebar").offset();
+
+    $(window).scroll(function() {
+      if ($(window).scrollTop() > offset.top) {
+        $("#sidebar").stop().animate({
+          marginTop: $(window).scrollTop() - offset.top
+        });
+      } else {
+        $("#sidebar").stop().animate({
+          marginTop: 0
+        });
+      };
+    });
+  })(jQuery);
+</script>
