@@ -1,21 +1,12 @@
 @media (min-width:992px) {
 
   .current {
-    border-bottom: 3px solid #2d13bd;
+    border-bottom: 3px solid #c7d44a;
   }
   
   #nav {
-    background-color: #BDD2FF;
+    background-color: #1d4d75;
     padding: 0px;
-
-    .main {
-      font-size: 2em;
-
-      #nav-icon {
-        width: 1.5em;
-        height: 1.5em;
-      }
-    }
 
     #navTog {
       margin-top: 20px;
@@ -29,15 +20,15 @@
   }
 
   #dropfont {
-    font-size: 1.5em;
-    padding: 1.25em 1em;
-    color: #545b62;
+    font-size: 1.3em;
+    padding: 1em;
+    color: #f8f9fa;
   }
 
   #dropdn-menu,
   #sub-dropdn-menu,
   #sub-dropdn-menu2 {
-    background-color: #BDD2FF;
+    background-color: #1d4d75;
 
     a {
       text-decoration: none;
@@ -45,13 +36,13 @@
   }
 
   .LinkT {
-    background-color: #BDD2FF;
     padding: 1em 0em;
+    color: #f8f9fa !important;
 
     #icon {
       float: right;
       margin-top: 6px;
-      color: #1e7e34;
+      color: #e5e9ec;
     }
   }
 

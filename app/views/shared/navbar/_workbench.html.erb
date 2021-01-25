@@ -1,12 +1,12 @@
 <li class="dropdown-submenu " id="sub-dropdn">
   <a href="<%= workbenches_path %>" class="nav-link LinkT">Workbench
-    <span class="badge badge-primary badge-pill">2</span>
+    <span class="badge badge-info badge-pill">2</span>
     <i class="fas fa-caret-right" id="icon"></i>
   </a>
   <ul class="dropdown-menu" id="sub-dropdn-menu">
     <li class="dropdown-submenu" id="sub-dropdn2">
       <a href="<%= workbenches_path(category: "風冷") %>" class="nav-link LinkT">風冷
-        <span class="badge badge-primary badge-pill"><%= Workbench.where(category_id: 3).count %></span>
+        <span class="badge badge-info badge-pill"><%= Workbench.where(category_id: 3).count %></span>
         <i class="fas fa-caret-right" id="icon"></i>
       </a>
       <ul class="dropdown-menu" id="sub-dropdn-menu2">
@@ -19,7 +19,7 @@
     </li>
     <li class="dropdown-submenu" id="sub-dropdn2">
       <a href="<%= workbenches_path(category: "管冷") %>" class="nav-link LinkT">管冷
-        <span class="badge badge-primary badge-pill"><%= Workbench.where(category_id: 4).count %></span>
+        <span class="badge badge-info badge-pill"><%= Workbench.where(category_id: 4).count %></span>
         <i class="fas fa-caret-right" id="icon"></i>
       </a>
       <ul class="dropdown-menu" id="sub-dropdn-menu2">

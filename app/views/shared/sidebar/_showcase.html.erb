@@ -1,43 +1,25 @@
 <li>
   <a href="<%= showcases_path %>">Glass Showcase</a>
-  <span class="badge badge-info">2</span>
-  <i class="fas fa-angle-down SCF" data-toggle="collapse" href="#o2o" id="faDown"></i>
-  <div class="collapse" id="o2o">
-    <div>
-      <ul class="list-unstyled" id="p10">
-        <li>
-          <a href="<%= showcases_path(category: "機上型") %>">機上型</a>
-          <span class="badge badge-info"><%= Showcase.where(category_id: 1).count %></span>
-          <i class="fas fa-angle-down SCSF" data-toggle="collapse" href="#o2o2o" id="faDown"></i>
-          <div class="collapse" id="o2o2o">
-            <div>
-              <ul class="list-unstyled" id="p10">
-                <% Showcase.all.where(category_id: 1).each do |showcase| %>
-                  <li>
-                    <%= link_to showcase.title, showcase %>
-                  </li>
-                <% end %>
-              </ul>
-            </div>
-          </div>
-        </li>
-        <li>
-          <a href="<%= showcases_path(category: "機下型") %>">機下型</a>
-          <span class="badge badge-info"><%= Showcase.where(category_id: 2).count %></span>
-          <i class="fas fa-angle-down SCSS" data-toggle="collapse" href="#o2o2t" id="faDown"></i>
-          <div class="collapse" id="o2o2t">
-            <div>
-              <ul class="list-unstyled" id="p10">
-                <% Showcase.all.where(category_id: 2).each do |showcase| %>
-                  <li>
-                    <%= link_to showcase.title, showcase %>
-                  </li>
-                <% end %>
-              </ul>
-            </div>
-          </div>
-        </li>
+  <ul>
+    <li>
+      <a href="<%= showcases_path(category: "機上型") %>">機上型</a>
+      <ul>
+        <% Showcase.all.where(category_id: 1).each do |showcase| %>
+          <li>
+            <%= link_to showcase.title, showcase %>
+          </li>
+        <% end %>
       </ul>
-    </div>
-  </div>
+    </li>
+    <li>
+      <a href="<%= showcases_path(category: "機下型") %>">機下型</a>
+      <ul>
+        <% Showcase.all.where(category_id: 2).each do |showcase| %>
+          <li>
+            <%= link_to showcase.title, showcase %>
+          </li>
+        <% end %>
+      </ul>
+    </li>
+  </ul>
 </li>

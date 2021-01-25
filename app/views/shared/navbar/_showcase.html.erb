@@ -1,12 +1,12 @@
 <li class="dropdown-submenu" id="sub-dropdn">
   <a href="<%= showcases_path %>" class="nav-link LinkT">Glass Showcases
-    <span class="badge badge-primary badge-pill">2</span>
+    <span class="badge badge-info badge-pill">2</span>
     <i class="fas fa-caret-right" id="icon"></i>
   </a>
   <ul class="dropdown-menu" id="sub-dropdn-menu">
     <li class="dropdown-submenu" id="sub-dropdn2">
       <a href="<%= showcases_path(category: "機上型") %>" class="nav-link LinkT">機上型
-        <span class="badge badge-primary badge-pill"><%= Showcase.where(category_id: 1).count %></span>
+        <span class="badge badge-info badge-pill"><%= Showcase.where(category_id: 1).count %></span>
         <i class="fas fa-caret-right" id="icon"></i>
       </a>
       </button>
@@ -20,7 +20,7 @@
     </li>
     <li class="dropdown-submenu" id="sub-dropdn2">
       <a href="<%= showcases_path(category: "機下型") %>" class="nav-link LinkT">機下型
-        <span class="badge badge-primary badge-pill"><%= Showcase.where(category_id: 2).count %></span>
+        <span class="badge badge-info badge-pill"><%= Showcase.where(category_id: 2).count %></span>
         <i class="fas fa-caret-right" id="icon"></i>
       </a>
       <ul class="dropdown-menu" id="sub-dropdn-menu2">

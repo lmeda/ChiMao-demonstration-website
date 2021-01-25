@@ -15,9 +15,12 @@ require("channels")
 require("popper.js")
 require("jquery")
 require("bootstrap")
+
 require("custom/rotate.js")
 require("custom/superfish.js")
 require("custom/hoverIntent.js")
+
+require("custom/hc-offcanvas-nav.js")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

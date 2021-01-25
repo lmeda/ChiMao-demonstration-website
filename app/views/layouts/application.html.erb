@@ -9,22 +9,18 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0-12/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-sidebar/3.3.1/sticky-sidebar.min.js"></script>
   </head>
 
-  <body>
-    <%= render 'shared/navbar' %>
-      
-    <div class="wrapper d-flex align-items-stretch">
-			<%= render 'shared/sidebar' %>
+  <body class="featured">
+    <div id="container">
+      <%= render 'shared/header' %>
+      <%= render 'shared/navbar' %>
+      <%= render 'shared/sidebar' %>
       <div class="container-fluid p-0">
-        <a class="topName" href="/"><%= image_tag('/Datetime.png', class: "d-inline-block align-top") %>ChiMao</a>
-        <div class="p-5 p-md-5 pt-0">
+        <div class="container p">
           <%= render 'shared/carousel' %>
-          <div class="container p">
-            <%= render 'shared/breadcrumbs' %>
-            <%= yield %>
-          </div>
+          <%= render 'shared/breadcrumbs' %>
+          <%= yield %>
         </div>
         <%= render 'shared/footer' %>
       </div>

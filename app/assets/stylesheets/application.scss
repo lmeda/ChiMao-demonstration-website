@@ -13,7 +13,47 @@ body {
 }
 
 .p {
-  padding: 30px;
+  padding: 30px 0px;
+}
+
+.header-area {
+  .site-branding {
+    margin: 1.4vw 0vw;
+    padding-left: 0px;
+    @media (max-width: 992px) {
+      text-align: center;
+    }
+    .site-title {
+      font-size: 4vw;
+      @media (min-width: 992px) {
+        width: 10em;
+      }
+      a {
+        color: #1e7e34;
+        font-size: 3vw;
+        &:hover {
+          color: #1e7e34;
+          text-decoration: none;
+        }
+        img {
+          width: 6vw;
+        }
+        span {
+          font-size: 1.5vw;
+          color: #28a745;
+        }
+        @media (max-width: 992px) {
+          font-size: 5vw;
+          img {
+            width: 8vw;
+          }
+          span {
+            font-size: 2vw;
+          }
+        }
+      }
+    }
+  }
 }
 
 .navbar {
@@ -29,30 +69,27 @@ body {
 }
 
 .topName {
-  margin-left:56px;
-  margin-top:40px;
-  margin-bottom: 0px;
-  padding-bottom: 10px;
   font-family: 'Noto Serif TC';
   font-style: italic;
-  font-size: 45px;
-  width: 200px;
-  border-bottom: 3px solid #acc9d4;
+  font-size: 2em;
   color: #0062cc;
+  &:hover {
+    text-decoration: none;
+  }
   @media (min-width: 992px) {
     display: none;
   }
 }
 
 #sf-menu li {
-  background: #BDD2FF;
+  background: #1d4d75;
   -webkit-transition: background .2s;
   transition: background .2s;
 }
 
 #sf-menu li:hover,
 #sf-menu li.sfHover {
-  background: #CFDEFF;
+  background: #306a9a;
   /* only transition out, not in */
   -webkit-transition: none;
   transition: none;
@@ -65,17 +102,19 @@ body {
 
 #sf-menu li:hover > a,
 #sf-menu li.sfHover > a {
-  color: #f8f9fa;
   /* only transition out, not in */
   -webkit-transition: none;
   transition: none;
 }
 
-#carousel-image {
-  height: 60vh;
-  @media (max-width: 992px) {
-    height: 40vh;
-  }
+.carousel {
+  margin-bottom: 20px;
+  #carousel-image {
+    height: 50vh;
+    @media (max-width: 992px) {
+      height: 30vh;
+    }
+}
 }
 
 .footer {

@@ -1,12 +1,7 @@
-<nav class="navbar sticky-top navbar-expand-lg navbar-light fixed-top" id="nav">
-  <div class="container-fluid">
-    <a class="navbar-brand main" href="<%= root_path %>">
-      <%= image_tag('/Datetime.png', class: "d-inline-block align-top", id: "nav-icon") %>
-      ChiMao
-    </a>
-
+<nav class="sticky-top fixed-top navbar-expand-lg" id="nav">
+  <div class="container">
     <div class="collapse navbar-collapse">
-      <ul class="navbar-nav mx-auto" id="sf-menu">
+      <ul class="navbar-nav" id="sf-menu">
         <li class="nav-item">
           <%= link_to "Home", root_path, class: "nav-link #{current? "current", root_path}", id: "dropfont" %>
         </li>

@@ -1,43 +1,25 @@
 <li>
   <a href="<%= workbenches_path %>">Workbench</a>
-  <span class="badge badge-info">2</span>
-  <i class="fas fa-angle-down WBF" data-toggle="collapse" href="#o2t" id="faDown"></i>
-  <div class="collapse" id="o2t">
-    <div>
-      <ul class="list-unstyled" id="p10">
-        <li>
-          <a href="<%= workbenches_path(category: "風冷") %>">風冷</a>
-          <span class="badge badge-info"><%= Workbench.where(category_id: 3).count %></span>
-          <i class="fas fa-angle-down WBSF" data-toggle="collapse" href="#o2t2o" id="faDown"></i>
-          <div class="collapse" id="o2t2o">
-            <div>
-              <ul class="list-unstyled" id="p10">
-                <% Workbench.all.where(category_id: 3).each do |workbench| %>
-                  <li>
-                    <%= link_to workbench.title, workbench %>
-                  </li>
-                <% end %>
-              </ul>
-            </div>
-          </div>
-        </li>
-        <li>
-          <a href="<%= workbenches_path(category: "管冷") %>">管冷</a>
-          <span class="badge badge-info"><%= Workbench.where(category_id: 4).count %></span>
-          <i class="fas fa-angle-down WBSS" data-toggle="collapse" href="#o2t2t" id="faDown"></i>
-          <div class="collapse" id="o2t2t">
-            <div>
-              <ul class="list-unstyled" id="p10">
-                <% Workbench.all.where(category_id: 4).each do |workbench| %>
-                  <li>
-                    <%= link_to workbench.title, workbench %>
-                  </li>
-                <% end %>
-              </ul>
-            </div>
-          </div>
-        </li>
+  <ul>
+    <li>
+      <a href="<%= workbenches_path(category: "風冷") %>">風冷</a>
+      <ul>
+        <% Workbench.all.where(category_id: 3).each do |workbench| %>
+          <li>
+            <%= link_to workbench.title, workbench %>
+          </li>
+        <% end %>
       </ul>
-    </div>
-  </div>
+    </li>
+    <li>
+      <a href="<%= workbenches_path(category: "管冷") %>">管冷</a>
+      <ul>
+        <% Workbench.all.where(category_id: 4).each do |workbench| %>
+          <li>
+            <%= link_to workbench.title, workbench %>
+          </li>
+        <% end %>
+      </ul>
+    </li>
+  </ul>
 </li>
