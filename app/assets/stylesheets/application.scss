@@ -7,6 +7,7 @@
 @import "messages";
 @import "contacts";
 @import "modal.min";
+@import "snippet";
 
 body {
   font-family: 'Noto Serif TC', serif;
@@ -107,20 +108,34 @@ body {
   transition: none;
 }
 
-.carousel {
+#cycle {
   margin-bottom: 20px;
   #carousel-image {
     height: 50vh;
     @media (max-width: 992px) {
       height: 30vh;
     }
-}
+  }
+  a {
+    background:#1b1b1b;
+    border-radius: 50%;
+    width:40px;
+    height:40px;
+    top:50%;
+    margin-top: -30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    @media (max-width: 992px) {
+      width: 30px;
+      height: 30px;
+      margin-top: -20px;
+    }
+  }
 }
 
 .footer {
-  //height: 100%;
   width: 100%;
-  margin-top: 20px;
+  margin-top: 30px;
 
   .intro {
     background-color: #3f4952;

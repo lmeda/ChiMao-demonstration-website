@@ -22,6 +22,9 @@
           <%= render 'shared/breadcrumbs' %>
           <%= yield %>
         </div>
+        <% unless params[:controller]=="contacts" %>
+          <%= render 'shared/snippet' %>
+        <% end %>
         <%= render 'shared/footer' %>
       </div>
     </div>
