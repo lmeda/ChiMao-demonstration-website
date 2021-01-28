@@ -22,7 +22,7 @@ class ContactsController < ApplicationController
     @contact = Contact.new(contact_params)
     add_breadcrumb("Contact us")
 
-    if !simple_captcha_valid? && verify_recaptcha(model: @contact) && @contact.save
+    if @contact.save_with_captcha && verify_recaptcha(model: @contact) && @contact.save
       redirect_back(fallback_location: contact_chimao_path, flash: { :success => "留言成功，感謝您"})
     else
       flash[:warning] = "訊息填寫有誤。請重試"
@@ -45,6 +45,6 @@ class ContactsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def contact_params
-      params.require(:contact).permit(:title, :description, :name, :company, :address, :zip, :phone, :fax, :email)
+      params.require(:contact).permit(:title, :description, :name, :company, :address, :zip, :phone, :fax, :email, :captcha, :captcha_key)
     end
 end

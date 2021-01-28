@@ -17,6 +17,8 @@ class ShowcasesController < ApplicationController
 	end
 
 	def show
+		views = @showcase.views + 1
+		@showcase.update(views: views)
 		add_breadcrumb(@showcase.title)
 	end
 
@@ -61,7 +63,7 @@ class ShowcasesController < ApplicationController
 	end
 
 	def showcase_params
-		params.require(:showcase).permit(:title, :model_number, :description, :capacity, :size, :voltage, :temperature, :compressor, :product, :specification, :category_id)
+		params.require(:showcase).permit(:title, :views, :model_number, :description, :capacity, :size, :voltage, :temperature, :compressor, :product, :specification, :category_id)
 	end
 
 	def add_home_breadcrumb

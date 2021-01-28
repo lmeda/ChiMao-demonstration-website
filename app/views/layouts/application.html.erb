@@ -16,8 +16,7 @@
       <%= render 'shared/header' %>
       <%= render 'shared/navbar' %>
       <%= render 'shared/sidebar' %>
-      <div class="container-fluid p-0">
-        <div class="container p">
+        <div class="container">
           <%= render 'shared/carousel' %>
           <%= render 'shared/breadcrumbs' %>
           <%= yield %>
@@ -25,8 +24,7 @@
         <% unless params[:controller]=="contacts" %>
           <%= render 'shared/snippet' %>
         <% end %>
-        <%= render 'shared/footer' %>
-      </div>
+      <%= render 'shared/footer' %>
     </div>
   </body>
 </html>
