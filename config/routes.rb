@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   post 'contact_chimao', to: "contacts#create"
   root 'pages#home'
   get 'about', to: "pages#about"
+  get 'product', to: "pages#products"
   devise_for :administrators
 
   resources :messages

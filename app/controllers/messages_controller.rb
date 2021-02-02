@@ -5,7 +5,7 @@ class MessagesController < ApplicationController
 	before_action :is_admin!, except: [:index]
 	
 	def index
-		@message = Message.all
+		@message = Message.all.order("created_at DESC")
 		add_breadcrumb('News')
 	end
 

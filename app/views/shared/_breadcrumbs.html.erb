@@ -1,6 +1,6 @@
-<nav aria-label="breadcrumb">
+<nav class="float-item" aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item">Home</li>
+    <li class="breadcrumb-item"><a class="homelink" href="/">Home</a></li>
     <% @breadcrumbs.each do |breadcrumb| %>
       <% if breadcrumb[:path].nil? %>
         <li class="breadcrumb-item active" aria-current="page">
@@ -8,7 +8,7 @@
         </li>
       <% else %>
         <li class="breadcrumb-item">
-          <%= link_to breadcrumb[:label], breadcrumb[:path] %>
+          <%= link_to breadcrumb[:label], breadcrumb[:path], class: "parLink" %>
         </li>
       <% end %>
     <% end %>

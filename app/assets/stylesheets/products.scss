@@ -1,3 +1,24 @@
+.commodity {
+  padding-bottom:10px;
+  a {
+    color: #495057;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.branch {
+  padding: 5px 10px;
+  color: darkgray;
+  a {
+    color: #6c757d;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
 #cards-space {
   margin-bottom: 20px;
 

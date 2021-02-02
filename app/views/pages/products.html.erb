@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row align-items-center">
+    <div class="col-lg-6 order-lg-2">
+      <div class="p-5">
+        <%= image_tag('/3s.jpg', class: "img-fluid rounded-circle") %>
+      </div>
+    </div>
+    <div class="col-lg-6 order-lg-1">
+      <div class="p-5">
+        <h3 class="commodity"><%= link_to "Glass Showcase", showcases_path %></h3>
+        <li class="branch"><%= link_to "機上型", showcases_path(category: "機上型") %></li>
+        <li class="branch"><%= link_to "機下型", showcases_path(category: "機下型") %></li>
+      </div>
+    </div>
+  </div>
+  <div class="row align-items-center">
+    <div class="col-lg-6">
+      <div class="p-5">
+        <%= image_tag('/home/bg-showcase-2.jpg', class: "img-fluid rounded-circle") %>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="p-5">
+        <h2 class="display-4">We salute you!</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
+      </div>
+    </div>
+  </div>
+  <div class="row align-items-center">
+    <div class="col-lg-6 order-lg-2">
+      <div class="p-5">
+        <%= image_tag('/home/bg-showcase-3.jpg', class: "img-fluid rounded-circle") %>
+      </div>
+    </div>
+    <div class="col-lg-6 order-lg-1">
+      <div class="p-5">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -2,11 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.home-header {
-	text-align: center;
-	background-color: antiquewhite;
-	padding: 30px;
-	margin-bottom: 0px;
+.features-icons {
+	padding-top: 7rem;
+	padding-bottom: 7rem
+}
+
+.features-icons .features-icons-item {
+	max-width: 20rem
+}
+
+.features-icons .features-icons-item .features-icons-icon {
+	height: 7rem
+}
+
+.features-icons .features-icons-item .features-icons-icon i {
+	font-size: 4.5rem
+}
+
+.features-icons .features-icons-item:hover .features-icons-icon i {
+	font-size: 5rem
 }
 
 .c {
@@ -18,6 +32,10 @@
 	padding-bottom: 1em;
 	padding-right: 0.8em;
 	color:rgb(0, 0, 0);
+}
+
+.on-pic {
+	padding-bottom:15px;
 }
 
 .info {

@@ -20,9 +20,9 @@ body {
 
 .header-area {
   .site-branding {
-    margin: 1.4vw 0vw;
     padding-left: 0px;
-    @media (max-width: 992px) {
+    @media (max-width: 768px) {
+      margin: 1.4vw 0vw;
       text-align: center;
     }
     .site-title {
@@ -109,11 +109,51 @@ body {
   transition: none;
 }
 
-#cycle {
+.float-item {
+  padding-top:20px;
+  .homelink {
+    color: #1d2022;
+    text-decoration: none;
+  }
+  .parLink {
+    color: #6c757d;
+    text-decoration: none;
+  } 
+}
+
+#quality {
+  margin-bottom: 20px;
+
+  #main-image {
+    height: 60vh;
+
+    @media (max-width: 992px) {
+      height: 30vh;
+    }
+  }
+  a {
+    background: #1b1b1b;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    margin-top: -30px;
+    margin-left: 10px;
+    margin-right: 10px;
+
+    @media (max-width: 992px) {
+      width: 30px;
+      height: 30px;
+      margin-top: -20px;
+    }
+  }
+}
+
+#character {
   margin-bottom: 20px;
   margin-top: 20px;
   #carousel-image {
-    height: 50vh;
+    height: 40vh;
     @media (max-width: 992px) {
       height: 30vh;
     }

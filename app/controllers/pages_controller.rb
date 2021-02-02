@@ -7,4 +7,8 @@ class PagesController < ApplicationController
   def about
     add_breadcrumb('About')
   end
+
+  def products
+    add_breadcrumb('Product')
+  end
 end
