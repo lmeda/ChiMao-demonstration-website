@@ -12,18 +12,11 @@
   </head>
 
   <body class="featured">
-    <div id="container">
       <%= render 'shared/header' %>
       <%= render 'shared/navbar' %>
       <%= render 'shared/sidebar' %>
       <% if params[:controller]=="pages" || params[:controller]=="messages" %>
-        <div class="card bg-dark text-white" style="border-radius:0px;">
-          <img class="card-img" src="/pexels.jpg" style="height:40vh;">
-          <div class="card-img-overlay" style="top:25%;left:10%;">
-            <h3 class="card-title">Card title</h3>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
-        </div>
+        <%= render 'shared/banner' %>
       <% end %>
       <div class="container">
         <% if params[:controller]=="showcases" || params[:controller]=="workbenches" %>

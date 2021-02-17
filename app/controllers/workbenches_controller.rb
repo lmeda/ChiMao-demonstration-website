@@ -64,10 +64,10 @@ class WorkbenchesController < ApplicationController
 	end
 
 	def add_home_breadcrumb
-		add_breadcrumb('Product')
+		add_breadcrumb('Product', product_path)
 	end
 
 	def add_index_breadcrumb
-		add_breadcrumb('Workbenches')
+		add_breadcrumb('Workbenches', workbenches_path)
 	end
 end

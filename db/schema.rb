@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_27_084633) do
+ActiveRecord::Schema.define(version: 2020_12_29_175756) do
 
   create_table "administrators", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -70,10 +70,10 @@ ActiveRecord::Schema.define(version: 2021_01_27_084633) do
     t.string "product"
     t.string "specification"
     t.integer "category_id"
+    t.integer "views", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "slug"
-    t.integer "views", default: 0
     t.index ["slug"], name: "index_showcases_on_slug", unique: true
   end
 
@@ -105,6 +105,7 @@ ActiveRecord::Schema.define(version: 2021_01_27_084633) do
     t.string "product"
     t.string "specification"
     t.integer "category_id"
+    t.integer "views", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "slug"

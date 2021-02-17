@@ -4,7 +4,9 @@
 
 .features-icons {
 	padding-top: 7rem;
-	padding-bottom: 7rem
+	padding-bottom: 7rem;
+	background: #e9ecef;
+	margin-bottom: 20px;
 }
 
 .features-icons .features-icons-item {
@@ -21,6 +23,54 @@
 
 .features-icons .features-icons-item:hover .features-icons-icon i {
 	font-size: 5rem
+}
+
+.mid-features {
+	height:370px;
+	
+	.lastest-news {
+		margin:2em 0em;
+		text-align: center;
+	}
+
+	.news-content {
+		color:#3b4146;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	.news-time {
+		color:#8f969c;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	.new-product {
+		margin-top:2em;
+		margin-bottom:1.2em;
+		text-align: center;
+	}
+
+	.item-top {
+		padding-bottom:.8em;
+		padding-left:30px;
+		padding-right: 20px;
+		color:#455c5d;
+	}
+
+	.item-body {
+		color:#517475;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	.read {
+		float:right;
+		margin-right:2em;
+		&:hover {
+			text-decoration: none;
+		}
+	}
 }
 
 .c {

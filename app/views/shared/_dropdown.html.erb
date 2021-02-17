@@ -1,7 +1,5 @@
 <li class="nav-item dropdown" id="dropdn">
-  <a class="nav-link" id="dropfont" href="<%= product_path %>">
-    Products
-  </a>
+  <%= link_to "Products", product_path, class: "nav-link #{current? "current", product_path}", id: "dropfont" %>
   <ul class="dropdown-menu" id="dropdn-menu" aria-labelledby="navbarDropdown">
     <%= render 'shared/navbar/showcase' %>
     <%= render 'shared/navbar/workbench' %>
