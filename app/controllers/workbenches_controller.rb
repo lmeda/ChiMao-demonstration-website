@@ -8,14 +8,16 @@ class WorkbenchesController < ApplicationController
 	def index
 		if params[:category]
 			@category_id = Category.find_by(name: params[:category]).id
-			@workbench = Workbench.where(category_id: @category_id)
+			@workbench = Workbench.where(category_id: @category_id).order("created_at ASC")
 		else
-			@workbench = Workbench.all
+			@workbench = Workbench.all.order("created_at ASC")
 		end
 		add_breadcrumb('Workbenches')
 	end
 
 	def show
+		views = @workbench.views + 1
+		@workbench.update(views: views)
 		add_breadcrumb(@workbench.title)
 	end
 
@@ -60,7 +62,7 @@ class WorkbenchesController < ApplicationController
 	end
 
 	def workbench_params
-		params.require(:workbench).permit(:title, :model_number, :description, :product, :specification, :category_id)
+		params.require(:workbench).permit(:title, :views, :model_number, :description, :product, :specification, :category_id)
 	end
 
 	def add_home_breadcrumb

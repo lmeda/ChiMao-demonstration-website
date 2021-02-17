@@ -10,7 +10,7 @@
         <i class="fas fa-caret-right" id="icon"></i>
       </a>
       <ul class="dropdown-menu" id="sub-dropdn-menu2">
-        <% Workbench.all.where(category_id: 3).each do |workbench| %>
+        <% Workbench.all.where(category_id: 3).order("created_at ASC").each do |workbench| %>
           <li>
             <%= link_to workbench.title, workbench, class: "nav-link LinkT" %>
           </li>
@@ -23,7 +23,7 @@
         <i class="fas fa-caret-right" id="icon"></i>
       </a>
       <ul class="dropdown-menu" id="sub-dropdn-menu2">
-        <% Workbench.all.where(category_id: 4).each do |workbench| %>
+        <% Workbench.all.where(category_id: 4).order("created_at ASC").each do |workbench| %>
           <li>
             <%= link_to workbench.title, workbench, class: "nav-link LinkT" %>
           </li>

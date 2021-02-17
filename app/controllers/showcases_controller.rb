@@ -9,9 +9,9 @@ class ShowcasesController < ApplicationController
 		#@s1 = Showcase.all.where(category_id: 1)
 		if params[:category]
 			@category_id = Category.find_by(name: params[:category]).id
-			@showcase = Showcase.where(category_id: @category_id)
+			@showcase = Showcase.where(category_id: @category_id).order("created_at ASC")
 		else
-			@showcase = Showcase.all
+			@showcase = Showcase.all.order("created_at ASC")
 		end
 		add_breadcrumb('Showcases')
 	end

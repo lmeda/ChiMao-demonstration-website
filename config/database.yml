@@ -10,12 +10,17 @@
 #   https://dev.mysql.com/doc/refman/5.7/en/password-hashing.html
 #
 default: &default
-  adapter: mysql2
-  encoding: utf8mb4
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: 10
+  # adapter: mysql2
+  # encoding: utf8mb4
+  # pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: user
   password: miki7075
-  socket: /var/run/mysqld/mysqld.sock
+  # socket: /var/run/mysqld/mysqld.sock
 
 development:
   <<: *default
@@ -49,6 +54,6 @@ development:
 #
 production:
   <<: *default
-  database: chimao_production
-  username: chimao
-  password: <%= ENV['CHIMAO_DATABASE_PASSWORD'] %>
+  database: chimao_pro
+  # username: chimao
+  # password: <%= ENV['CHIMAO_DATABASE_PASSWORD'] %>

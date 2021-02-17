@@ -11,7 +11,7 @@
       </a>
       </button>
       <ul class="dropdown-menu" id="sub-dropdn-menu2">
-        <% Showcase.all.where(category_id: 1).each do |showcase| %>
+        <% Showcase.all.where(category_id: 1).order("created_at ASC").each do |showcase| %>
           <li>
             <%= link_to showcase.title, showcase, class: "nav-link LinkT" %>
           </li>
@@ -24,7 +24,7 @@
         <i class="fas fa-caret-right" id="icon"></i>
       </a>
       <ul class="dropdown-menu" id="sub-dropdn-menu2">
-        <% Showcase.all.where(category_id: 2).each do |showcase| %>
+        <% Showcase.all.where(category_id: 2).order("created_at ASC").each do |showcase| %>
           <li>
             <%= link_to showcase.title, showcase, class: "nav-link LinkT" %>
           </li>

@@ -12,7 +12,10 @@
 
 ActiveRecord::Schema.define(version: 2020_12_29_175756) do
 
-  create_table "administrators", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "administrators", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -25,13 +28,13 @@ ActiveRecord::Schema.define(version: 2020_12_29_175756) do
     t.index ["reset_password_token"], name: "index_administrators_on_reset_password_token", unique: true
   end
 
-  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "contacts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "contacts", force: :cascade do |t|
     t.string "title"
     t.text "description"
     t.string "name"
@@ -45,25 +48,25 @@ ActiveRecord::Schema.define(version: 2020_12_29_175756) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "friendly_id_slugs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
     t.integer "sluggable_id", null: false
     t.string "sluggable_type", limit: 50
     t.string "scope"
     t.datetime "created_at"
-    t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true, length: { slug: 70, scope: 70 }
-    t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", length: { slug: 140 }
+    t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
+    t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
   end
 
-  create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "messages", force: :cascade do |t|
     t.string "title"
     t.text "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "showcases", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "showcases", force: :cascade do |t|
     t.string "title"
     t.string "model_number"
     t.text "description"
@@ -77,7 +80,7 @@ ActiveRecord::Schema.define(version: 2020_12_29_175756) do
     t.index ["slug"], name: "index_showcases_on_slug", unique: true
   end
 
-  create_table "simple_captcha_data", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "simple_captcha_data", id: :serial, force: :cascade do |t|
     t.string "key", limit: 40
     t.string "value", limit: 6
     t.datetime "created_at"
@@ -85,7 +88,7 @@ ActiveRecord::Schema.define(version: 2020_12_29_175756) do
     t.index ["key"], name: "idx_key"
   end
 
-  create_table "standards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "standards", force: :cascade do |t|
     t.string "title"
     t.string "model_number"
     t.integer "capacity"
@@ -98,7 +101,7 @@ ActiveRecord::Schema.define(version: 2020_12_29_175756) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "workbenches", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "workbenches", force: :cascade do |t|
     t.string "title"
     t.string "model_number"
     t.text "description"
