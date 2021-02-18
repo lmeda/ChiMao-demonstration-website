@@ -1,7 +1,8 @@
 class PagesController < ApplicationController
-  layout "main", only: [:home]
+  layout "page"
 
   def home
+    render :layout => "main"
   end
 
   def about

@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   get 'feedback', to: "contacts#index"
   get 'contact_chimao', to: "contacts#new"
   post 'contact_chimao', to: "contacts#create"
+  get 'category_type', to: "categories#new"
+  post 'category_type', to: "categories#create"
   root 'pages#home'
   get 'about', to: "pages#about"
   get 'product', to: "pages#products"

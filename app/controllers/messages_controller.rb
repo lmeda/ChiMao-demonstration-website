@@ -1,5 +1,6 @@
 class MessagesController < ApplicationController
 	include MessagesHelper
+	layout "page"
   before_action :set_message, only: [:edit, :update, :destroy]
 	before_action :authenticate_administrator!, except: [:index]
 	before_action :is_admin!, except: [:index]

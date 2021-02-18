@@ -15,10 +15,17 @@
       <%= render 'shared/header' %>
       <%= render 'shared/navbar' %>
       <%= render 'shared/sidebar' %>
+      <% if params[:controller]=="pages" || params[:controller]=="messages" %>
+        <%= render 'shared/banner' %>
+      <% end %>
       <div class="container">
+        <% if params[:controller]=="showcases" || params[:controller]=="workbenches" %>
+          <%= render 'shared/carousel' %>
+        <% end %>
         <%= render 'shared/breadcrumbs' %>
         <%= yield %>
       </div>
+      <%= render 'shared/snippet' %>
       <%= render 'shared/footer' %>
     </div>
   </body>
