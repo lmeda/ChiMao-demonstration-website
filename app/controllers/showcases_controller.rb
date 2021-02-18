@@ -1,5 +1,5 @@
 class ShowcasesController < ApplicationController
-	layout "page", only: [:index]
+	layout "page", only: [:index, :show]
   before_action :set_showcase, only: [:show, :edit, :update, :destroy]
 	before_action :authenticate_administrator!, except: [:index, :show]
 	before_action :is_admin!, except: [:index, :show]
