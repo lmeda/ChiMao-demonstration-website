@@ -17,7 +17,7 @@
     </thead>
     <tbody>
       <% if @showcase.category_id == 1 %>
-        <% Standard.all.where(category_id: 1).each do |standard| %>
+        <% Standard.all.where(category_id: 1).order("created_at ASC").each do |standard| %>
           <tr>
             <td class="text-nowrap d"><%= standard.model_number %></td>
             <td class="text-nowrap d"><%= standard.title %></td>
@@ -35,7 +35,7 @@
           </tr>
         <% end %>
       <% elsif @showcase.category_id == 2 %>
-        <% Standard.all.where(category_id: 2).each do |standard| %>
+        <% Standard.all.where(category_id: 2).order("created_at ASC").each do |standard| %>
           <tr>
             <td class="text-nowrap d"><%= standard.model_number %></td>
             <td class="text-nowrap d"><%= standard.title %></td>
